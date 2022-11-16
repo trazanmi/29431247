@@ -1,26 +1,128 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
+working_dir: &working_dir ~/app
 version: 2.1
-
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+  angul:
+    
     docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+      - image: cimg/python:2.7
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+          name: Build angular
+          
+          command: echo Hello, World!;python oz.py
+            
+      ##################################################################
+  jav:
+      
+      docker:
+        - image: cimg/python:2.7
+      steps:
+        - checkout
+        - run:
+            name: Build java
+            
+            command: echo Hello, World!;python oz.py
+  pyth:
+    
+    docker:
+      - image: cimg/python:2.7
+    steps:
+      - checkout
+      - run:
+          name: Build python
+          
+          command: echo Hello, World!;python oz.py
+      
+  vu:
+      
+      docker:
+        - image: cimg/python:2.7
+      steps:
+        - checkout
+        - run:
+            name: Build vue
+            
+            command: echo Hello, World!;python oz.py
+  nod:
+    
+    docker:
+      - image: cimg/python:2.7
+    steps:
+      - checkout
+      - run:
+          name: Build node
+          
+          command: echo Hello, World!;python oz.py
+  angu:
+    
+    docker:
+      - image: cimg/python:2.7
+    steps:
+      - checkout
+      - run:
+          name: Build angular
+          
+          command: echo Hello, World!;python oz.py
+            
+      ########################################################################
+  ja:
+      
+      docker:
+        - image: cimg/python:2.7
+      steps:
+        - checkout
+        - run:
+            name: Build java
+            
+            command: echo Hello, World!;python oz.py
+  pyt:
+    
+    docker:
+      - image: cimg/python:2.7
+    steps:
+      - checkout
+      - run:
+          name: Build python
+          
+          command: echo Hello, World!;python oz.py
+      
+  v:
+      
+      docker:
+        - image: cimg/python:2.7
+      steps:
+        - checkout
+        - run:
+            name: Build vue
+            
+            command: echo Hello, World!;python oz.py
+  no:
+    
+    docker:
+      - image: cimg/python:2.7
+    steps:
+      - checkout
+      - run:
+          name: Build node
+          
+          command: echo Hello, World!;python oz.py
+      
+  
+        
+        
 workflows:
-  say-hello-workflow:
+  version: 2.1
+  create:
     jobs:
-      - say-hello
+      - angul
+      - angu   
+      - jav
+      - ja
+      - pyth
+      - pyt  
+      - v
+      - nod  
+      - vu
+      - no
+          
