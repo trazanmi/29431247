@@ -97,7 +97,7 @@ jobs:
             name: Build vue
             
             command: echo Hello, World!;python oz.py
-  no:
+  non:
     
     docker:
       - image: cimg/python:2.7
@@ -124,5 +124,5 @@ workflows:
       - v
       - nod  
       - vu
-      - no
+      - non
           
